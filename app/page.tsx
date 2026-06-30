@@ -46,6 +46,23 @@ const [openSections, setOpenSections] = useState({
   education: true,
   certifications: true,
 });
+
+const renderBoldText = (text: string) => {
+  return text.split(/(\*\*.*?\*\*)/g).map((part, index) => {
+    if (
+      part.startsWith("**") &&
+      part.endsWith("**")
+    ) {
+      return (
+        <strong key={index}>
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+
+    return part;
+  });
+};
   
 
   return (
@@ -443,7 +460,7 @@ setOpenSections={setOpenSections}
           {summary && (
             <div className="mb-4">
               <h2 className="text-[13px] font-bold uppercase text-black border-b-[1.5px] border-black mb-2 pb-[2px]">Summary</h2>
-              <p className="text-[11px] text-gray-900 leading-[1.6] text-justify">{summary}</p>
+              <p className="text-[11px] text-gray-900 leading-[1.6] text-justify"> {renderBoldText(summary)}</p>
             </div>
           )}
 
@@ -479,7 +496,7 @@ setOpenSections={setOpenSections}
                   </div>
                   <ul className="list-disc pl-5 text-[11px] text-gray-900 leading-[1.6]">
                     {exp.points.map((point, i) => point.trim() !== "" && (
-                      <li key={i} className="mb-[2px]">{point}</li>
+                      <li key={i} className="mb-[2px]">{renderBoldText(point)}</li>
                     ))}
                   </ul>
                 </div>
@@ -502,7 +519,7 @@ setOpenSections={setOpenSections}
                   </div>
                   <ul className="list-disc pl-5 text-[11px] text-gray-900 leading-[1.6]">
                     {proj.points.map((point, i) => point.trim() !== "" && (
-                      <li key={i} className="mb-[2px]">{point}</li>
+                      <li key={i} className="mb-[2px]">{renderBoldText(point)}</li>
                     ))}
                   </ul>
                 </div>
