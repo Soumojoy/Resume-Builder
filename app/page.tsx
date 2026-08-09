@@ -104,7 +104,7 @@ const renderBoldText = (text: string) => {
               <input placeholder="Portfolio / Website Link" className="border border-gray-300 px-4 py-3 rounded-xl text-sm bg-white focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all w-1/3 focus:outline-blue-500" value={personalInfo.portfolio} onChange={(e) => updatePersonalInfo('portfolio', e.target.value)} />
               <input placeholder="GitHub Link" className="border border-gray-300 px-4 py-3 rounded-xl text-sm bg-white focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all w-1/3 focus:outline-blue-500" value={personalInfo.github} onChange={(e) => updatePersonalInfo('github', e.target.value)} />
             </div>
-          </section> */}
+          </section> haha*/}
 <AccordionSection
   title="Personal Information"
   sectionKey="personal"
